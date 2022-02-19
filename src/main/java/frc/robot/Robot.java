@@ -69,8 +69,14 @@ public class Robot extends TimedRobot {
     
   }
   if(serialPort.getBytesReceived()>0){
-    System.out.println(serialPort.getBytesReceived());
-    System.out.println(serialPort.readString());
+    //System.out.println(serialPort.getBytesReceived());
+    //System.out.println(serialPort.readString());
+    System.out.println("received");
+    byte[] data = new byte[3];
+    data=serialPort.read(3);
+    System.out.println(data[0]);
+    System.out.println(data[1]);
+    System.out.println(data[2]);
   }
     // System.out.println(serialPort.read(3));
   }
